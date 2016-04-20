@@ -1,0 +1,29 @@
+<% provide(:title, 'Add book') %>
+<h1>Add book</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@book) do |f| %>
+        <%= render 'shared/error_messages' %>
+
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+
+        <%= f.label :author %>
+        <%= f.text_field :author %>
+
+        <%= f.label :genre %>
+        <%= select_tag('book[genre_ids][]', options_for_select(@genres.collect { |ff| [ff.name_of_genre, ff.id] }, @book.genres.collect { |fs| fs.id }),
+                       {:multiple => true, :id => 'genre_ids'}) %>
+
+        <%= f.label :image_url %>
+        <%= f.text_field :image_url %>
+
+        <%= f.label :status %>
+        <%= select(:book, :status, %w[free block]) %>
+
+        <%= f.submit 'Add book to library', class: 'btn btn-large btn-primary' %>
+    <% end %>
+  </div>
+</div>
+

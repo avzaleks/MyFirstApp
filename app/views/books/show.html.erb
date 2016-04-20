@@ -1,0 +1,18 @@
+<% provide(:title, @book.title) %>
+<div class='row'>
+  <aside class='span4'>
+    <section>
+      <%= link_to image_tag(@book.image_url, alt: 'Image', width: '160', height: '320') %>
+      <h3><%= @book.title %></h3>
+      <h4><%= @book.author %></h4>
+      <h4><%= @book.genres.map { |g| g.name_of_genre } %></h4>
+    </section>
+  </aside>
+  <div class='span8'>
+    <h5><%= @book.short_content %></h5>
+    <% if signed_in? %>
+        <%= link_to 'Read', '#' %>
+    <% end %>
+  </div>
+
+</div>
