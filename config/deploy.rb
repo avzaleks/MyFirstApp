@@ -1,7 +1,7 @@
 set :stages, %w(staging production)
 set :stages_dir, 'config/deploy'
 set :default_stage, 'staging'
-set :rvm_ruby_string, "1.1.1@truba"
+set :rvm_ruby_string, ""
 
 
 require 'mina/multistage'
@@ -14,7 +14,7 @@ load File.expand_path('../unicorn-tasks.rb', __FILE__)
 
 set_default :keep_releases, 5
 
-set :repository, "dfbdfbdfb"
+set :repository, "zzzzzzzzzzzzzzzz"
 set :branch, 'master'
 
 set :term_mode, nil
@@ -27,7 +27,7 @@ set :shared_paths, [
 ]
 
 task :environment do
-  invoke :'rvm:use[1.1.1@truba]'
+  invoke :'rvm:use[]'
 end
 
 task setup: :environment do
