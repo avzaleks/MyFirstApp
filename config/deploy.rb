@@ -1,7 +1,7 @@
 set :stages, %w(staging production)
 set :stages_dir, 'config/deploy'
 set :default_stage, 'staging'
-set :rvm_ruby_string, ""
+set :rvm_ruby_string, "111111111@ljlijlkjlkjlkjljlkk"
 
 
 require 'mina/multistage'
@@ -14,7 +14,7 @@ load File.expand_path('../unicorn-tasks.rb', __FILE__)
 
 set_default :keep_releases, 5
 
-set :repository, "zzzzzzzzzzzzzzzz"
+set :repository, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 set :branch, 'master'
 
 set :term_mode, nil
